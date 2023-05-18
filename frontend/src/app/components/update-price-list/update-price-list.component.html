@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="container">
+  <div class="row col-md-12 offset-md-0">
+    <h2 class="text-center mt-4">
+      <b>ACTUALIZAR LISTA DE PRECIOS</b>
+    </h2>
+    <div class="row">
+      <form
+        class="col-md-8 offset-md-2"
+        (ngSubmit)="update()"
+        [formGroup]="updateForm"
+      >
+        <fieldset>
+          <div class="form-group">
+            <label class="form-label mt-4">Nombre:</label>
+            <input
+              type="listaPrecios"
+              class="form-control"
+              id="listaPrecios"
+              placeholder="Ingrese el nombre corresponsiente a la lista de precios (MAYUSCULAS)"
+              formControlName="listaPrecios"
+            />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label mt-4">Porcentaje:</label>
+            <input
+              type="percentage"
+              class="form-control"
+              id="percentage"
+              placeholder="Ingrese el porcentaje a incrementar (Sin simbolo %)"
+              formControlName="percentage"
+            />
+          </div>
+
+          <div class="btn-group btn-group-lg col-md-12 mt-4" role="group">
+            <button type="submit" class="btn btn btn-warning mt-4">
+              <div>Actualizar</div>
+            </button>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="form-group col-md-8 offset-md-2">
+        <label class="form-label mt-4">Registros actualizados:</label>
+        <input
+          type="text"
+          class="form-control"
+          readonly=""
+          placeholder="{{ records }}"
+        />
+      </div>
+    </div>
+    <br />
+  </div>
+</div>
